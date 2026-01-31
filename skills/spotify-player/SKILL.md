@@ -58,6 +58,9 @@ Agent playbooks (chain 2-4 commands)
 - "Play this artist on my TV": `spogo search artist "Artist Name" --limit 1` -> `spogo device list` -> `spogo device set "<tv>"` -> `spogo play <artist-uri> --type artist`
 - "Volume to 42%, shuffle on, skip if over 3 minutes in": `spogo status --json` -> `spogo volume 42` -> `spogo shuffle` -> `spogo next` (if status shows progress > 180s)
 - "What's similar to this track?": `spogo status --json` -> `spogo track info <id>` -> `spogo search track "<related artist/genre>" --limit 5`
+- "Hand off to my phone when I leave the room": `spogo device list` -> match device name contains "phone" -> `spogo device set "<name|id>"` (or use `--device` on a follow-up command)
+- "Add 5 upbeat tracks after this one for my run": `spogo status --json` -> `spogo track info <id>` -> `spogo search track "upbeat workout" --limit 5` -> `spogo queue add <uri>` (repeat)
+- "Continue this vibe / more like this": `spogo status --json` -> `spogo track info <id>` -> `spogo search track "<artist|genre|album>" --limit 5` -> `spogo queue add <uri>` (repeat) -> `spogo queue show`
 
 spotify_player commands (fallback)
 - Search: `spotify_player search "query"`
