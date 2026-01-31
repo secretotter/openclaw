@@ -1,0 +1,22 @@
+{
+  "id": "prompt-injection-guard",
+  "name": "prompt-injection-guard",
+  "version": "1.0.0",
+  "author": "openclaw",
+  "description": "Security skill to prevent prompt injection attacks when processing untrusted content",
+  "category": "security",
+  "tags": ["security", "prompt-injection", "safety", "core"],
+  "priority": "critical",
+  "alwaysLoad": true,
+  "files": ["SKILL.md"],
+  "triggers": [
+    "read email",
+    "fetch webpage",
+    "read document",
+    "read attachment",
+    "untrusted content",
+    "external data",
+    "user input",
+    "tool output"
+  ]
+}
